@@ -1,0 +1,15 @@
+
+<div class="form">
+    <div class="search-bar">
+        <input type="text" name="search" id="search" class="input-search" placeholder="Ex: São paulo, BR" [(ngModel)]="location" (keyup.enter)="searchByNameCity()">
+        <label class="label-search" for="search">
+            <img src="/assets/img/location_arrow.svg" alt="">
+        </label>
+    </div>
+
+
+
+    <button class="btn-search" (click)="searchByCoordsUser()">
+        <img src="/assets/img/location_crosshairs.svg" alt="">
+    </button>
+</div>

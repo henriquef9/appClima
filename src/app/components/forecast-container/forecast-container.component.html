@@ -1,0 +1,38 @@
+
+
+<div class="card-forecast">
+
+    <div class="card-forecast-top">
+
+        <h3>Previsão do clima</h3>
+
+        <div class="card-forecast-filters">
+            
+            <div [class]="{'item-filter': true, 'active': itemActive == i}" *ngFor="let date of dates; let i = index" (click)="onClickItemFilter(date, i)">
+                <p>{{date | date: 'EEE'}}</p>
+            </div>
+         
+        </div>
+
+    </div>
+
+    <div class="cards-container">
+        
+        <div *ngFor="let weather of filterWeatherList">
+            <p class="cards-container-hours">{{weather.dt_txt.split(" ")[1]}}</p>
+            <div class="card-forecast-item">
+                <div class="card-forecast-item-icon">
+                    <img src="https://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png" alt="">
+                </div>
+    
+                <p class="card-forecast-item-description">
+                    {{weather.weather[0].description}}
+                </p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>

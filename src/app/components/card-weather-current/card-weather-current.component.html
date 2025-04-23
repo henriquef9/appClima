@@ -1,0 +1,65 @@
+
+
+<div class="card-weather">
+    <div class="card-weather-top">
+        <div class="location">
+            <img src="/assets/img/location_ic_on.svg" alt="">
+            <h3>{{weatherCurrent.name}}, {{weatherCurrent.sys.country}}</h3>
+        </div>
+
+        <div class="date">
+            <span>{{dateCurrent | date: 'dd/MM/yyyy' }}</span>
+        </div>
+
+        <div class="reload">
+            <button (click)="onClickReload()">
+                <img src="/assets/img/update_reload.svg" alt="">
+            </button>
+        </div>
+    </div>
+
+    <div class="card-weather-body">
+        <div class="body-left">
+            <div class="weather-icon">
+                <img src="https://openweathermap.org/img/wn/{{weatherCurrent.weather[0].icon}}@2x.png" alt="">
+            </div>
+            <p class="description">
+               {{weatherCurrent.weather[0].description}} 
+            </p>
+        </div>
+
+        <div class="body-right">
+            <p class="title">temperatura atual</p>
+            <div class="temp">
+                <p>{{round(weatherCurrent.main.temp)}}</p>
+                <img src="/assets/img/temperature_celsius.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-weather-details">
+        <div class="row">
+            <div class="item-details">
+                <img src="/assets/img/temperature_plus.svg" alt="">
+                <p>Temperatura max: {{weatherCurrent.main.temp_max}} &deg;C</p>
+            </div>
+
+            <div class="item-details">
+                <img src="/assets/img/temperature_minus.svg" alt="">
+                <p>Temperatura min: {{weatherCurrent.main.temp_min}} &deg;C</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="item-details">
+                <img src="/assets/img/wind_air_weather_windy_climate.svg" alt="">
+                <p>Velocidade do vento: {{weatherCurrent.wind.speed}} m/s</p>
+            </div>
+
+            <div class="item-details">
+                <img src="/assets/img/humidity_percentage_precipitation.svg" alt="">
+                <p>Umidade: {{weatherCurrent.main.humidity}} %</p>
+            </div>
+        </div>
+    </div>
+</div>
